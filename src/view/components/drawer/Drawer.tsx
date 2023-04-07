@@ -1,4 +1,4 @@
-import { routeNavigate } from '../../router/navigation.js';
+import { routeNavigate } from '../../../router/navigation.js';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

@@ -1,7 +1,7 @@
 import SoundButton from './SoundButton';
 import { FlatList, RefreshControl, SafeAreaView, StyleSheet, View, Text } from 'react-native';
 import React, { useState, useEffect, useCallback } from 'react';
-import { Sound } from '../models/Sound'
+import { Sound } from '../../models/Sound'
 
 interface SoundboardProps {
   items: Array<Sound.SoundItem>;

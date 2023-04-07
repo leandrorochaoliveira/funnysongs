@@ -5,7 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import * as Sharing from 'expo-sharing';
 
-import { Sound } from '../models/Sound'
+import { Sound } from '../../models/Sound'
 
 interface SoundProps {
   setSound: any,

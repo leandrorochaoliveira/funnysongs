@@ -1,33 +1,53 @@
 
-import Main from '../pages/main/Main';
+import MainPage from '../view/pages/main/Main';
+import FavoritesPage from '../view/pages/favorites/Favorites';
+import SettingsPage from '../view/pages/settings/Settings';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import CustomDrawer from '../components/drawer/Drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { navigationRef } from './navigation.js';
+
 export default function Router() {
-  const Drawer = createDrawerNavigator();
+  const Tab = createBottomTabNavigator();
+
+  // Objeto com os ícones para rotas ativas
+  const activeIcons = {
+    Home: 'ios-home',
+    Favorites: 'heart',
+    Settings: 'menu'
+  };
+
+  // Objeto com os ícones para rotas inativas
+  const inactiveIcons = {
+    Home: 'ios-home-outline',
+    Favorites: 'heart-outline',
+    Settings: 'menu-outline',
+  };
+
+  const getTabIcons = (route: string, focused: boolean) => {
+    const icons = focused ? activeIcons : inactiveIcons;
+    return icons[route] || 'default_icon';
+  }
 
   return (
     <NavigationContainer ref={navigationRef}>
-      <Drawer.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#1a3444',
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName = getTabIcons(route.name, focused)
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
           },
-          headerTintColor: '#fff',
-        }}
-        drawerContent={(props) => <CustomDrawer {...props} />}>
-        <Drawer.Screen
-          name="List"
-          component={Main}
-          options={{
-            title: 'Início',
-            /* headerRight: () => <MapButton />, */
-          }}
-        />
-        {/* <Drawer.Screen name="Clients" component={ClientIndex} /> */}
-      </Drawer.Navigator>
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+        })}
+      >
+        <Tab.Screen name="Home" component={MainPage} />
+        <Tab.Screen name="Favorites" component={FavoritesPage} />
+        <Tab.Screen name="Settings" component={SettingsPage} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }

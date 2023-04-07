@@ -1,5 +1,5 @@
 import SoundBoard from '../../components/SoundBoard'
-import { musics } from '../../utils/musics'
+import { musics } from '../../../utils/musics'
 
 export default function MainPage () {
   const items = [
