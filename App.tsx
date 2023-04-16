@@ -11,7 +11,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <Router />
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </SafeAreaProvider>
   );
 }

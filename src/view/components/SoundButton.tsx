@@ -50,8 +50,9 @@ export default function SoundButton({ setSound, item }:SoundProps) {
   }
 
   return (
-    <View style={styles.container} className='px-6 pb-4'>
-      <View style={styles.card} className='border-b-2 border-gray-300 w-full flex flex-col justify-center items-center'>
+    <View style={styles.container} className='flex'>
+    <View className='px-8 pb-4 w-full flex'>
+      <View className='bg-blue-50 border-b-2 border-gray-300 w-full flex flex-col justify-center items-center'>
         <Pressable
           style={({ pressed }) => [
             {
@@ -81,20 +82,16 @@ export default function SoundButton({ setSound, item }:SoundProps) {
         </View>
       </View>
     </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.5,
     alignItems: 'center',
     marginBottom: 8,
 
-  },
-  card: {
-    display: `flex`,
-    flexDirection: `column`,
-    justifyContent: 'center',
   },
   button: {
     width: 96,

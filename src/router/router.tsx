@@ -41,8 +41,9 @@ export default function Router() {
           headerTintColor: '#84C2F4',
           tabBarStyle: { 
             backgroundColor: '#2E80C2',
-            //paddingTop: 8,
-            //paddingBottom: 8
+            paddingTop: 8,
+            //paddingBottom: 8,
+            height: 96
             
           },
           
