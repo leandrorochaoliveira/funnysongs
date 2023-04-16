@@ -33,20 +33,35 @@ export default function Router() {
   return (
     <NavigationContainer ref={navigationRef}>
       <Tab.Navigator
+   
         screenOptions={({ route }) => ({
+          headerStyle: {
+            backgroundColor: '#1C4C73',
+          },
+          headerTintColor: '#84C2F4',
+          tabBarStyle: { 
+            backgroundColor: '#2E80C2',
+            //paddingTop: 8,
+            //paddingBottom: 8
+            
+          },
+          
+          
+          //headerRight
+          
           tabBarIcon: ({ focused, color, size }) => {
             let iconName = getTabIcons(route.name, focused)
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
+          tabBarActiveTintColor: '#fff',
+          tabBarInactiveTintColor: '#84C2F4',
         })}
       >
-        <Tab.Screen name="Home" component={MainPage} />
-        <Tab.Screen name="Favorites" component={FavoritesPage} />
-        <Tab.Screen name="Settings" component={SettingsPage} />
+        <Tab.Screen name="Home" component={MainPage} options={{ title: 'Início' }}/>
+        <Tab.Screen name="Favorites" component={FavoritesPage} options={{ title: 'Meus Favoritos' }}/>
+        <Tab.Screen name="Settings" component={SettingsPage} options={{ title: 'Opções' }}/>
       </Tab.Navigator>
     </NavigationContainer>
   );

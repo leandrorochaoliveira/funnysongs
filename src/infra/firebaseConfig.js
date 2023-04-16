@@ -23,7 +23,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+//const analytics = getAnalytics(app);
 const db = getFirestore(app);
 // For more information on how to access Firebase in your project,
 // see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase
@@ -34,5 +34,5 @@ export {
   app,
   db,
   auth,
-  analytics
+  //analytics
 }

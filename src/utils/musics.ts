@@ -1,3 +1,6 @@
-export const musics = {
-  "manoel-gomes": require("../../assets/sounds/manoel-gomes.mp3"),
-};
+export const musics = [
+  {
+    label: 'Manoel Gomes',
+    file: require("../sounds/manoel-gomes.mp3")
+  }
+]

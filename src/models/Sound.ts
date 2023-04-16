@@ -1,7 +1,7 @@
 export namespace Sound {
   export type SoundItem = {
-    name: string;
-    sound: any
+    label: string;
+    file: any
   };
 
   export type Model = {

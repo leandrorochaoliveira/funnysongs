@@ -20,7 +20,7 @@ export default function SoundButton({ setSound, item }:SoundProps) {
     try {
 
       const { sound } = await Audio.Sound.createAsync(
-        item.sound
+        item.file
       );
   
 
@@ -39,7 +39,7 @@ export default function SoundButton({ setSound, item }:SoundProps) {
     }
 
     try {
-      await Sharing.shareAsync(item.sound.uri)
+      await Sharing.shareAsync(item.file.uri)
         .then(() => console.log('Arquivo compartilhado com sucesso!'))
         .catch(error => console.log('Erro ao compartilhar arquivo:', error));
 
@@ -63,7 +63,7 @@ export default function SoundButton({ setSound, item }:SoundProps) {
           onPress={() => playSound()}>
           <Entypo name="controller-play" size={24} color="white" />
         </Pressable>
-        <Text className='text-center text-lg'>{ item.name }</Text>
+        <Text className='text-center text-lg'>{ item.label }</Text>
         <View className='flex flex-row items-center justify-center gap-3 w-full py-2'>
           <Pressable
             className="grow-1 rounded-full bg-pink-400 p-2 uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-pink-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-pink-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-pink-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
@@ -77,7 +77,6 @@ export default function SoundButton({ setSound, item }:SoundProps) {
             onPress={share}
             className="grow-1 rounded-full bg-blue-500 p-2 uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
             <FontAwesome name="share" size={20} color="white" />
-            
           </Pressable>
         </View>
       </View>

@@ -8,13 +8,9 @@ const Stack = createNativeStackNavigator();
 export default function Settings() {
 
   return (
-    
-      <NavigationContainer>
         <Stack.Navigator initialRouteName="menu">
           <Stack.Screen name="menu" component={MenuPage} />
           <Stack.Screen name="login" component={LoginPage} />
         </Stack.Navigator>
-      </NavigationContainer>
-    
   )
 }
