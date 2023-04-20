@@ -5,8 +5,8 @@ import SettingsPage from '../view/pages/settings/Settings';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
 import { navigationRef } from './navigation.js';
+import colors from '../config/colors.js'
 
 export default function Router() {
   const Tab = createBottomTabNavigator();
@@ -36,11 +36,11 @@ export default function Router() {
    
         screenOptions={({ route }) => ({
           headerStyle: {
-            backgroundColor: '#1C4C73',
+            backgroundColor: colors.primary,
           },
-          headerTintColor: '#84C2F4',
+          headerTintColor: colors.light,
           tabBarStyle: { 
-            backgroundColor: '#2E80C2',
+            backgroundColor: colors.secondary,
             paddingTop: 8,
             //paddingBottom: 8,
             height: 96
@@ -57,7 +57,7 @@ export default function Router() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: '#fff',
-          tabBarInactiveTintColor: '#84C2F4',
+          tabBarInactiveTintColor: colors.light,
         })}
       >
         <Tab.Screen name="Home" component={MainPage} options={{ title: 'Início' }}/>

@@ -1,24 +1,8 @@
-module.exports = {
-  'primary': {
-    100: '#cffafe',
-    200: '#a5f3fc',
-    300: '#67e8f9',
-    400: '#22d3ee',
-    500: '#06b6d4',
-    600: '#0891b2',
-    700: '#0e7490',
-    800: '#155e75',
-    900: '#164e63',
-  },
-  'secondary': {
-    100: '#cffafe',
-    200: '#a5f3fc',
-    300: '#67e8f9',
-    400: '#22d3ee',
-    500: '#06b6d4',
-    600: '#0891b2',
-    700: '#0e7490',
-    800: '#155e75',
-    900: '#164e63',
-  },
+const colors = {
+  'primary': '#1C4C73',
+  'secondary': '#2E80C2',
+  'light': '#84C2F4'
 }
+export default colors
+
+module.exports = colors

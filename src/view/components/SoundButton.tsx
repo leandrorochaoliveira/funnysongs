@@ -51,8 +51,8 @@ export default function SoundButton({ setSound, item }:SoundProps) {
 
   return (
     <View style={styles.container} className='flex'>
-    <View className='px-8 pb-4 w-full flex'>
-      <View className='bg-blue-50 border-b-2 border-gray-300 w-full flex flex-col justify-center items-center'>
+    <View className='px-4 pb-4 w-full'>
+      <View className='border-b-2 border-gray-300 w-full flex flex-col justify-center items-center'>
         <Pressable
           style={({ pressed }) => [
             {

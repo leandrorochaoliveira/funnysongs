@@ -31,7 +31,7 @@ export default function SoundBoard({ items }: SoundboardProps) {
 
   return (
         <FlatList
-          className='pt-4 pb-4'
+          className='pt-4 pb-4 grow'
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
           data={items}
           numColumns={2}
