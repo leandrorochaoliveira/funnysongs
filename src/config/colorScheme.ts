@@ -2,7 +2,7 @@ import { useColorScheme } from "nativewind";
 import React, { useState, useCallback, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-type ColorScheme = 'light' | 'dark' | 'system';
+type ColorSchemeValue = 'light' | 'dark' | 'system';
 
 function useColorSchemeStorage() {
   const [colorScheme, setColorScheme] = useColorScheme();
@@ -11,7 +11,7 @@ function useColorSchemeStorage() {
     async function getColorSchemeFromStorage() {
       const localColorScheme = await AsyncStorage.getItem('colorScheme');
       if (localColorScheme) {
-        setColorScheme(localColorScheme as ColorScheme);
+        setColorScheme(localColorScheme as ColorSchemeValue );
       } else {
         setColorScheme('system');
         AsyncStorage.setItem('colorScheme', 'system');
@@ -21,7 +21,7 @@ function useColorSchemeStorage() {
     getColorSchemeFromStorage();
   }, [colorScheme, setColorScheme]);
 
-  function changeColorScheme(value: ColorScheme) {
+  function changeColorScheme(value: ColorSchemeValue) {
     setColorScheme(value);
     AsyncStorage.setItem('colorScheme', value);
   }

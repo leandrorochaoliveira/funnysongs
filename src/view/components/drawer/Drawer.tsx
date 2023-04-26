@@ -44,7 +44,7 @@ export default function CustomDrawer(props: any) {
         paddingBottom: insets.bottom,
       }}>
       <View
-        className="flex flex-1 max-h-[22vh] items-center justify-center bg-secondary"
+        className="flex flex-1 max-h-[22vh] items-center justify-center bg-primary200"
         style={{
           paddingTop: insets.top,
         }}>

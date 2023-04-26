@@ -36,11 +36,11 @@ export default function Router() {
    
         screenOptions={({ route }) => ({
           headerStyle: {
-            backgroundColor: colors.primary,
+            backgroundColor: colors.primary100,
           },
-          headerTintColor: colors.light,
+          headerTintColor: colors.text100,
           tabBarStyle: { 
-            backgroundColor: colors.secondary,
+            backgroundColor: colors.primary200,
             paddingTop: 8,
             //paddingBottom: 8,
             height: 96
@@ -57,7 +57,7 @@ export default function Router() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: '#fff',
-          tabBarInactiveTintColor: colors.light,
+          tabBarInactiveTintColor: colors.text100,
         })}
       >
         <Tab.Screen name="Home" component={MainPage} options={{ title: 'Início' }}/>
